@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: rest-api
+  version: '1.0'
+  contact:
+    name: weizeyuan
+    url: 39.106.207.29
+    email: wooenrico@gmail.com
+  description: rest api文档测试
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/user/{username}':
+    get:
+      summary: 获取用户详情
+      tags:
+        - user
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                example-1:
+                  value:
+                    timestamp: 1608086734839
+                    data:
+                      id: 3
+                      username: wzy
+                      password: '123'
+                      gender: 男
+                      email: null
+                      version: 8
+                    desc: success
+                    duration: 270
+      operationId: get-user
+      description: ''
+    parameters:
+      - schema:
+          type: string
+        name: username
+        in: path
+        required: true
+        description: 用户名
+components:
+  schemas: {}
